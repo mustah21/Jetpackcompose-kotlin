@@ -19,6 +19,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -43,85 +44,33 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BinaryLayout() {
-    var c1 by remember { mutableStateOf(false) }
-    var c2 by remember { mutableStateOf(false) }
-    var c3 by remember { mutableStateOf(false) }
-    var c4 by remember { mutableStateOf(false) }
-    var c5 by remember { mutableStateOf(false) }
-    var c6 by remember { mutableStateOf(false) }
-    var c7 by remember { mutableStateOf(false) }
-    var c8 by remember { mutableStateOf(false) }
 
+    val switches = remember {
+        mutableStateListOf(false, false, false, false, false, false, false, false)
+    }
     var total = 0
+    for (i in switches.indices) {
+        if (switches[i]) {
+            total += 2.0.pow(i).toInt()
+
+        }
+    }
+
     Column() {
         Row(
-            modifier = Modifier
-                .statusBarsPadding(),
+            modifier = Modifier.statusBarsPadding(),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-            val v1 = makeSwitch(
-                c1,
-                switchOnChanged = { c1 = it },
-                op = 0,
-            )
-
-            val v2 = makeSwitch(
-                c2,
-                switchOnChanged = { c2 = it },
-                op = 1,
-            )
-
-            val v3 = makeSwitch(
-                c3,
-                switchOnChanged = { c3 = it },
-                op = 2,
-            )
-
-            val v4 = makeSwitch(
-                c4,
-                switchOnChanged = { c4 = it },
-                op = 3,
-            )
-
-            val v5 = makeSwitch(
-                c5,
-                switchOnChanged = { c5 = it },
-                op = 4,
-            )
-
-            val v6 = makeSwitch(
-                c6,
-                switchOnChanged = { c6 = it },
-                op = 5
-            )
-
-            val v7 = makeSwitch(
-                c7,
-                switchOnChanged = { c7 = it },
-                op = 6
-            )
-
-            val v8 = makeSwitch(
-                c8,
-                switchOnChanged = { c8 = it },
-                op = 7
-            )
-
-            val m1 = if (c1) v1 else 0
-            val m2 = if (c2) v2 else 0
-            val m3 = if (c3) v3 else 0
-            val m4 = if (c4) v4 else 0
-            val m5 = if (c5) v5 else 0
-            val m6 = if (c6) v6 else 0
-            val m7 = if (c7) v7 else 0
-            val m8 = if (c8) v8 else 0
-
-            total = m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8
-
+            for (i in switches.indices) {
+                Switch(
+                    checked = switches[i],
+                    onCheckedChange = { switches[i] = it },
+                    modifier = Modifier.scale(0.7f)
+                )
+            }
         }
-
         Text(
             text = "Value is: $total",
             modifier = Modifier
