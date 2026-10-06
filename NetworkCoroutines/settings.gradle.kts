@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Application"
+rootProject.name = "NetworkCoroutines"
 include(":app")
-include(":02lotto")
