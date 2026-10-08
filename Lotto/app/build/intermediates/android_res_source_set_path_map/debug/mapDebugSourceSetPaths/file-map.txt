@@ -1,0 +1,8 @@
+com.example.lotto.app-pngs-0 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\build\generated\res\pngs\debug
+com.example.lotto.app-updated_navigation_xml-1 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\build\generated\updated_navigation_xml\debug
+com.example.lotto.app-packageDebugResources-2 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.lotto.app-packageDebugResources-3 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.lotto.app-debug-4 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.lotto.app-debug-5 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\src\debug\res
+com.example.lotto.app-main-6 C:\Metropolia\third-Year\semester-1\sensors-android-studio\assignments\Lotto\app\src\main\res
+gradleHome-0 C:\Users\Mustafa\.gradle
